@@ -1,72 +1,92 @@
 import React from 'react';
-import { ArrowRight, Cog, Zap } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center px-6 lg:px-12 py-20">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full">
-        {/* Left Content */}
-        <div className="space-y-8">
-          {/* Accent line */}
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
-          
-          <div className="space-y-6">
-            <h1 className="text-5xl lg:text-7xl font-black tracking-tight text-white leading-tight">
-              <span className="block">Precision</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-slate-300 bg-clip-text text-transparent">
-                CNC Engineering
-              </span>
-              <span className="block text-3xl lg:text-4xl text-slate-300 font-semibold mt-4">
-                for Every Industry
-              </span>
-            </h1>
-            
-            <p className="text-xl text-slate-400 max-w-lg leading-relaxed">
-              Trust in precision. Rely on accuracy. From aerospace components to custom moulds, 
-              we deliver engineered excellence with cutting-edge CNC technology.
-            </p>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-lg tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900">
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative flex items-center gap-2">
-                Get a Free Quote
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </button>
-            
-            <div className="hidden sm:flex items-center gap-3 text-slate-400">
-              <div className="flex items-center gap-1">
-                <Cog className="w-5 h-5 text-blue-400" />
-                <span className="text-sm">Precision</span>
-              </div>
-              <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
-              <div className="flex items-center gap-1">
-                <Zap className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm">Speed</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center bg-steel-900 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-900/95 to-steel-900/80 z-10"></div>
+        {/* Placeholder for Hero Image - Industrial CNC Environment */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40"></div>
         
-        {/* Right Visual Placeholder */}
-        <div className="hidden lg:block">
-          <div className="relative">
-            {/* Main placeholder for CNC machine image */}
-            <div className="aspect-square bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-lg shadow-2xl flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center">
-                  <Cog className="w-12 h-12 text-white animate-spin" style={{ animationDuration: '8s' }} />
-                </div>
-                <p className="text-slate-400 text-sm">CNC Machine Visual</p>
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] z-10"></div>
+      </div>
+
+      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium tracking-wide uppercase">
+              <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+              Precision Engineering
+            </div>
+
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              Mastering the Art of <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
+                Precision CNC & Mould
+              </span> <br />
+              Fabrication
+            </h1>
+
+            <p className="text-lg lg:text-xl text-steel-300 max-w-xl leading-relaxed">
+              Unix Mould Engineering delivers ultra-precision <strong>5-axis CNC machining</strong> and <strong>custom mould solutions</strong> in Malaysia. 
+              We turn complex geometries into production-ready reality with ±0.01mm tolerance.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-primary-600 rounded-sm hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-900/20">
+                Request a Quote
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <button className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border border-steel-700 bg-steel-800/50 backdrop-blur-sm rounded-sm hover:bg-steel-800 transition-all duration-300">
+                View Capabilities
+                <ChevronRight className="ml-2 w-5 h-5 text-steel-400 group-hover:text-white transition-colors" />
+              </button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="pt-8 flex items-center gap-8 text-steel-400 text-sm font-medium">
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-8 bg-steel-800"></div>
+                <span>ISO 9001:2015<br/>Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-8 bg-steel-800"></div>
+                <span>20+ Years<br/>Experience</span>
               </div>
             </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-slate-500/20 to-blue-500/20 rounded-full blur-xl"></div>
           </div>
+
+          {/* Right Visual - Abstract/Technical Representation */}
+          <div className="hidden lg:block relative">
+            <div className="relative z-10 bg-steel-800/30 backdrop-blur-md border border-steel-700/50 rounded-lg p-2 shadow-2xl">
+               {/* Placeholder for a technical drawing or 3D model view */}
+               <div className="aspect-[4/3] rounded bg-steel-900/80 overflow-hidden relative group">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1635048424329-a9bfb146d7aa?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                  
+                  {/* Overlay UI elements to look like CAD software */}
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+                  </div>
+                  
+                  <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur px-3 py-1 rounded text-xs text-primary-400 font-mono border border-primary-500/30">
+                    X: 124.500 Y: 85.200 Z: -12.050
+                  </div>
+               </div>
+            </div>
+            
+            {/* Decorative background blobs */}
+            <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
+          </div>
+
         </div>
       </div>
     </section>
